@@ -3,22 +3,24 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
 
-    <persistence-unit name="pu" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="pu" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<!--        <jta-data-source>java:/vmDS</jta-data-source> you JNDI name for datasource -->
+        <jta-data-source>java:/school_mngtDS</jta-data-source>
 <!--        <class>com.jotech.models.Product</class>    list of classes to map-->
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/order_retail"/>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/school_mngt"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.password" value="Franjescal 1997"/>
             <property name="hibernate.archive.autodetection" value="class"/>
-            <property name="show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+            <property name="hibernate.flushMode" value="FLUSH_AUTO" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.use_sql_comments" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+
         </properties>
     </persistence-unit>
 </persistence>

@@ -1,0 +1,16 @@
+private static final MediaType JSON=MediaType.parse("application/json; charset=utf-8");
+    public String curlX(String postData,String resourceUrl){
+        OkHttpClient client=new OkHttpClient();
+        resourceUrl="exam-api/students/findByRegistrationNumber";
+        RequestBody requestBody=RequestBody.create(JSON,postData);
+        Request request=new Request.Builder()
+                .url("http://localhost:8081/exammanagementsystem/"+resourceUrl)
+                .post(requestBody)
+                .build();
+        try {
+            Response response=client.newCall(request).execute();
+            return response.body().string();
+        } catch (IOException e) {
+            return null;
+        }
+    }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.3.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="frontend/app/app.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Payments</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <!-- Content here -->
+    <div ng-view></div>
+</div>
+
+<script src="webjars/angularjs/1.7.8/angular.js"></script>
+<script src="webjars/angularjs/1.7.8/angular-animate.js"></script>
+<script src="webjars/angularjs/1.7.8/angular-resource.js"></script>
+<script src="webjars/angularjs/1.7.8/angular-route.js"></script>
+<script src="webjars/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+<script src="frontend/app/app.js"></script>
+<script src="frontend/app/app.config.js"></script>
+<script src="frontend/app/payment-list/payment-list.module.js"></script>
+<script src="frontend/app/payment-list/payment-list.component.js"></script>
+<script src="frontend/app/payment-detail/payment-detail.module.js"></script>
+<script src="frontend/app/payment-detail/payment-detail.component.js"></script>
+
+</body>
+</html>

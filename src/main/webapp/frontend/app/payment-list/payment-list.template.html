@@ -1,0 +1,33 @@
+<p>
+    Search:
+    <input ng-model="$ctrl.query"/>
+</p>
+<p>
+    Sort by:
+    <select ng-model="$ctrl.orderProp">
+        <option value="feeType">Alphabetical</option>
+        <option value="studentId">Newest</option>
+    </select>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">For</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">PaymentDate</th>
+        <th scope="col">View Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="payment in $ctrl.payments | filter:$ctrl.query|orderBy:$ctrl.orderProp">
+        <th scope="row">{{payment.studentId}}</th>
+        <td>{{payment.fee.feeType}}</td>
+        <td>{{payment.paymentAmount}}</td>
+        <td>{{payment.paymentDate}}</td>
+        <td><a href="#!/payments/{{payment.id}}">More...</a></td>
+    </tr>
+
+    </tbody>
+</table>
